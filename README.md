@@ -16,7 +16,7 @@ TODO: Documentation here.
 
 If you discover any bugs or want to drop a line, feel free to create an issue on Github
 
-http://github.com/kebab-project/kebab-remote-api/kebapress
+http://github.com/kebab-project/kebapress
 
 ## Contributing
 
