@@ -6,7 +6,7 @@ class CreateKebapressPosts < ActiveRecord::Migration
       t.boolean :published
       t.boolean :commentable
       t.integer :author_id
-      t.references :category, index: true
+      t.belongs_to :category
 
       t.timestamps
     end
