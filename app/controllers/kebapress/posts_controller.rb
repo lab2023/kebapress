@@ -3,7 +3,7 @@ require_dependency "kebapress/application_controller"
 module Kebapress
   class PostsController < ApplicationController
     def index
-    	@posts = Post.all.where(published: true)
+    	@posts = Post.all.where.not(published_at: nil)
     end
 
     def new

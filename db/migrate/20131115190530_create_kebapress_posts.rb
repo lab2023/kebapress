@@ -4,7 +4,6 @@ class CreateKebapressPosts < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.datetime :published_at
-      t.datetime :published
       t.boolean :commentable
       t.integer :author_id
       t.belongs_to :category
