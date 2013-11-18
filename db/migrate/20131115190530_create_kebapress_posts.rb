@@ -3,7 +3,8 @@ class CreateKebapressPosts < ActiveRecord::Migration
     create_table :kebapress_posts do |t|
       t.string :title
       t.text :body
-      t.boolean :published
+      t.datetime :published_at
+      t.datetime :published
       t.boolean :commentable
       t.integer :author_id
       t.belongs_to :category
