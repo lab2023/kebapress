@@ -1,5 +1,4 @@
 %h1 Posts Index
 
 - @posts.each do |post|
-	%p= post.title
-	%p= post.body
+	= link_to post.title, post_path(post)
