@@ -1,2 +1,4 @@
 %h1= @post.title
 %p= @post.body
+%p= @post.published_at.to_date
+%p= @post.tags.first.title
