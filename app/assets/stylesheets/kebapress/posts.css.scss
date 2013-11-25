@@ -2,3 +2,23 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.post {
+	border: solid 1px #C0C0C0;
+	margin: 10px auto;
+	width: 50%;
+	padding: 25px;
+	border-radius: 20px;
+}
+
+.title {
+	text-align: center;
+}
+
+.body {
+
+}
+
+.content {
+	font-style: italic;
+}

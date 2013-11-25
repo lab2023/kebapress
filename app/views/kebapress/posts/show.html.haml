@@ -1,5 +1,15 @@
-#id
+.post
+	.head
+		.date
+		.author
 	.title
 		%h1= @post.title
 	.body
 		%p= @post.body
+	.bottom
+		%h5= "Categories:"
+		.content
+			%p= @post.categories.first.title
+		%h5= "Tags:"
+		.content
+			%p= @post.tags.last.title
