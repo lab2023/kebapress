@@ -10,9 +10,9 @@
  *
  *= require_self
  *= require_tree .
-
+@import "bootstrap_override.css.sass"
 .post
-	border: solid 1px #C0C0C0
+	//border: solid 1px #C0C0C0
 	margin: 10px auto
 	width: 50%
 	height: auto
@@ -23,6 +23,7 @@
 	text-align: center
 
 .body
+	text-align: justify
 
 .bottom
 	overflow: hidden
@@ -35,6 +36,9 @@
 
 	p
 		font-size: 14px
+
+	.label-info
+		background-color: #FFFFFF
 
 .categories
 	float: left

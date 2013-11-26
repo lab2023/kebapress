@@ -1,5 +1,5 @@
 .post
-	.title
+	.title.page-header
 		%h1= @post.title
 	.info
 		%p= @post.published_at.to_date
@@ -9,9 +9,9 @@
 		.categories
 			%h5= "Categories:"
 			- @post.categories.each do |category|
-				= link_to category.title + ", ", "#"
+				%span.label.label-info= link_to category.title + ", ", "#"
 
 		.tags
 			%h5= "Tags:"
 			- @post.tags.each do |tag|
-				= link_to tag.title + ", ", "#"
+				%span.label.label-info= link_to tag.title + ", ", "#"
