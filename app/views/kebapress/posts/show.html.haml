@@ -1,15 +1,17 @@
 .post
-	.head
-		.date
-		.author
 	.title
 		%h1= @post.title
+	.info
+		%p= @post.published_at.to_date
 	.body
 		%p= @post.body
 	.bottom
-		%h5= "Categories:"
-		.content
-			%p= @post.categories.first.title
-		%h5= "Tags:"
-		.content
-			%p= @post.tags.last.title
+		.categories
+			%h5= "Categories:"
+			- @post.categories.each do |category|
+				= link_to category.title + ", ", "#"
+
+		.tags
+			%h5= "Tags:"
+			- @post.tags.each do |tag|
+				= link_to tag.title + ", ", "#"
