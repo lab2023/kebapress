@@ -1,5 +1,10 @@
-%h1 Posts Index
-
-- @posts.each do |post|
-	= link_to post.title, post_path(post)
-	%br/
+.index-page
+	.posts-container
+		- @posts.each do |post|
+			.post-container
+				.post-title
+					%h2= link_to post.title, post_path(post)
+				.post-body
+					%p= post.body
+	.sidebar-container
+		%h2= "Sidebar"
