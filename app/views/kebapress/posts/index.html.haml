@@ -1,4 +1,4 @@
-.index-page
+.index-page.container
 	.posts-container
 		- @posts.each do |post|
 			.post-container
@@ -6,5 +6,15 @@
 					%h2= link_to post.title, post_path(post)
 				.post-body
 					%p= post.body
+			.bottom
+				.categories
+					%h5= "Categories:"
+					- post.categories.each do |category|
+						%span.label.label-info= link_to category.title + ", ", "#"
+
+				.tags
+					%h5= "Tags:"
+					- post.tags.each do |tag|
+						%span.label.label-info= link_to tag.title + ", ", "#"
 	.sidebar-container
 		%h2= "Sidebar"
