@@ -1,4 +1,5 @@
-=stylesheet_link_tag 'http://dfimg.com/medium-editor/dist/css/medium-editor.css'
+=stylesheet_link_tag 'kebapress/medium-editor.css'
+=javascript_include_tag 'kebapress/medium-editor'
 
 .container
   %h1 New Post
@@ -9,12 +10,4 @@
     .body.editable{data: {field: {id: "body"}}}
     = f.submit
 
-%script{:type => "text/javascript",
-        :src  => "http://dfimg.com/medium-editor/dist/js/medium-editor.js"}
-
-:javascript
-  var editor = new MediumEditor('.editable');
-
-  $('.editable').bind('input propertychange', function() {
-   $("#post_" + $(this).attr("data-field-id")).val($(this).html());
-  });
+=javascript_include_tag 'kebapress/posts'
