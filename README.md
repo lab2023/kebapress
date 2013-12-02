@@ -1,5 +1,7 @@
 # Kebapress
 
+NOTE: Do not use this gem until v1.0.0
+
 ## Requirements
 
 Before mounting Kebapress to your application, you will need:
