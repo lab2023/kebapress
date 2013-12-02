@@ -1,6 +1,6 @@
 module Kebapress
   class Post < ActiveRecord::Base
-  	scope :published, -> { where.not(published_at: nil) }
+    scope :published, -> { where.not(published_at: nil) }
     has_and_belongs_to_many :tags
     has_and_belongs_to_many :categories
 
