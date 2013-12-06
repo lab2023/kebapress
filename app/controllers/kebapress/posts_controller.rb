@@ -14,7 +14,7 @@ module Kebapress
     def create
       @post = Kebapress::Post.new(post_params)
       if @post.save
-        redirect_to action: :index
+        redirect_to post_path(@post)
       else
         render 'new'
       end
@@ -22,6 +22,7 @@ module Kebapress
 
     def show
       @post = Kebapress::Post.find(params[:id])
+      render layout: 'kebapress/application'
     end
 
     def edit
@@ -35,7 +36,7 @@ module Kebapress
 
     private
       def post_params
-        params.require(:post).permit(:title, :body)
+        params.require(:post).permit(:title, :body, :published_at)
       end
   end
 end

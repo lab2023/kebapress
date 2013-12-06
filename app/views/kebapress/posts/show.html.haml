@@ -1,17 +1,18 @@
 .post.container
-	.title.page-header
-		%h1= @post.title
-	.info
-		%p= "Posted at " + @post.published_at.strftime("%m/%d/%Y")
-	.body
-		%p.lead= @post.body
-	.bottom
-		.categories
-			%h5= "Categories:"
-			- @post.categories.each do |category|
-				%span.label.label-info= link_to category.title + ", ", "#"
+  .title.page-header
+    %h1= @post.title
+  .info
+    - unless @post.published_at == nil
+      %p= "Posted at " + @post.published_at.strftime("%m/%d/%Y")
+  .body
+    %p.lead= @post.body.html_safe
+  .bottom
+    .categories
+      %h5= "Categories:"
+      - @post.categories.each do |category|
+        %span.label.label-info= link_to category.title + ", ", "#"
 
-		.tags
-			%h5= "Tags:"
-			- @post.tags.each do |tag|
-				%span.label.label-info= link_to tag.title + ", ", "#"
+    .tags
+      %h5= "Tags:"
+      - @post.tags.each do |tag|
+        %span.label.label-info= link_to tag.title + ", ", "#"

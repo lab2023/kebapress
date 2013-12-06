@@ -4,9 +4,10 @@
   %h2= "Posts"
   - @posts.each do |post|
     = link_to post.title, post_path(post)
+    = link_to " (Edit)", edit_post_path(post)
     %br
     %br
-    = link_to "New Post", new_post_path
+  = link_to "New Post", new_post_path
 
 .categories
   %h2= "Categories"
