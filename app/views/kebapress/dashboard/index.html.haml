@@ -1,11 +1,15 @@
 %h1= "Blog Dashboard"
 
-%h2= "Posts"
-- @posts.each do |post|
-  = link_to post.title, post_path(post)
-  %br
+.posts
+  %h2= "Posts"
+  - @posts.each do |post|
+    = link_to post.title, post_path(post)
+    %br
+    %br
+    = link_to "New Post", new_post_path
 
-%h2= "Categories"
-- @categories.each do |category|
-  = link_to category.title, category_path(category)
-  %br
+.categories
+  %h2= "Categories"
+  - @categories.each do |category|
+    = link_to category.title, category_path(category)
+    %br
