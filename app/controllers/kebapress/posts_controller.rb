@@ -8,6 +8,7 @@ module Kebapress
 
     def new
       @post = Kebapress::Post.new
+      render layout: 'layouts/hq/application'
     end
 
     def create
