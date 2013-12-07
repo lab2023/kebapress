@@ -4,7 +4,7 @@
 //= require jquery_ujs
 
 $(document).ready(function() {
-  $("#post_body.editable").val("Merhaba");
+  $('.body.editable').html($('#post_body').attr("value"));
 });
 
 var editor = new MediumEditor('.editable');
