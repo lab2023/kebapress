@@ -26,6 +26,8 @@ module Kebapress
     end
 
     def edit
+      @post = Kebapress::Post.find(params[:id])
+      render layout: 'layouts/hq/application'
     end
 
     def update

@@ -3,6 +3,10 @@
 //= require jquery
 //= require jquery_ujs
 
+$(document).ready(function() {
+  $("#post_body.editable").val("Merhaba");
+});
+
 var editor = new MediumEditor('.editable');
 
 $('.editable').bind('input propertychange', function() {
