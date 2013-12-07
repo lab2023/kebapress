@@ -38,6 +38,10 @@ module Kebapress
     end
 
     def destroy
+      @post = Kebapress::Post.find(params[:id])
+      @post.destroy
+
+      render 'dashboard/index'
     end
 
     private
