@@ -7,6 +7,10 @@
   .body.editable{data: {field: {id: "body"}}}
   .checkbox
   = check_box :post, :published, {}, true, false
+  %label= "Publish Now"
+  %br
+  = check_box :post, :commentable, {}, true, false
+  %label= "Commentable"
   %br
   = f.submit
 

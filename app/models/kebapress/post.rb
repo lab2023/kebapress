@@ -7,6 +7,6 @@ module Kebapress
     validates :title, presence: true
     validates :body, presence: true
     validates :published, inclusion: { in: [true, false] }
-    #validates :commentable, presence: true, inclusion: { in: [true, false] }
+    validates :commentable, inclusion: { in: [true, false] }
   end
 end
