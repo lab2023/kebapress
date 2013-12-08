@@ -13,10 +13,13 @@ module Kebapress
 
     def create
       @post = Kebapress::Post.new(post_params)
+      @post.published = false unless @post.published
+      @post.published_at = Time.now if @post.published
+
       if @post.save
-        redirect_to post_path(@post)
+        redirect_to '/blog/dashboard'
       else
-        render 'new'
+        render 'new', layout: 'layouts/hq/application'
       end
     end
 
@@ -32,21 +35,23 @@ module Kebapress
 
     def update
       @post = Kebapress::Post.find(params[:id])
+      @post.published = false unless params[:published]
+      @post.published_at ||= Time.now if @post.published
       @post.update(post_params)
 
-      redirect_to post_path(@post)
+      redirect_to '/blog/dashboard'
     end
 
     def destroy
       @post = Kebapress::Post.find(params[:id])
       @post.destroy
 
-      render 'dashboard/index'
+      redirect_to '/blog/dashboard'
     end
 
     private
       def post_params
-        params.require(:post).permit(:title, :body, :published_at)
+        params.require(:post).permit(:title, :body, :published)
       end
   end
 end

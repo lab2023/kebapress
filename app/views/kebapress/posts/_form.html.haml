@@ -5,8 +5,8 @@
   = f.text_field :title
   = f.hidden_field :body, html: { id: "body" }
   .body.editable{data: {field: {id: "body"}}}
-  = f.check_box :published_at, {class: 'checkbox'}, Time.now, nil
-  = label_tag :published_at, "Publish Now"
+  .checkbox
+  = check_box :post, :published, {}, true, false
   %br
   = f.submit
 

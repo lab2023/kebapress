@@ -1,17 +1,2 @@
-=stylesheet_link_tag 'kebapress/medium-editor.css'
-=javascript_include_tag 'kebapress/medium-editor'
-
-.container
-  %h1 New Post
-  = form_for @post, html: { id: "post-form" } do |f|
-    = f.text_field :title
-    = f.hidden_field :body, html: { id: "body" }
-    .body.editable{data: {field: {id: "body"}}}
-    = f.check_box :published_at, {class: 'checkbox'}, Time.now, nil
-    = label_tag :published_at, "Publish Now"
-    %br
-    = f.submit
-
-=javascript_include_tag 'kebapress/posts'
-
-
+%h1 New Post
+= render 'form', :post => @post
