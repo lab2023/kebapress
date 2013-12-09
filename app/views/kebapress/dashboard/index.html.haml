@@ -10,6 +10,14 @@
   %br
   = button_to "New Post", new_post_path, method: :get
 
+  %h2= "Uncategorized Posts"
+  - @posts.uncategorized.each do |unpost|
+    = link_to unpost.title, post_path(unpost)
+    = link_to "(Edit,", edit_post_path(unpost)
+    = link_to "Delete)", post_path(unpost), method: :delete
+    %br
+  %br
+
 .categories
   %h2= "Categories"
   - @categories.each do |category|
