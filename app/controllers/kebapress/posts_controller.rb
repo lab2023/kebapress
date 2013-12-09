@@ -57,7 +57,7 @@ module Kebapress
 
     private
       def post_params
-        params.require(:post).permit(:title, :body, :published, :commentable)
+        params.require(:post).permit(:title, :body, :published, :commentable, :tag_list)
       end
   end
 end
