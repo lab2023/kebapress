@@ -2,13 +2,15 @@ require_dependency "kebapress/application_controller"
 
 module Kebapress
   class PostsController < ApplicationController
+    layout 'layouts/hq/application'
+
     def index
     	@posts = Kebapress::Post.published.order("published_at DESC")
+      render layout: 'kebapress/application'
     end
 
     def new
       @post = Kebapress::Post.new
-      render layout: 'layouts/hq/application'
     end
 
     def create
@@ -21,7 +23,7 @@ module Kebapress
       if @post.save
         redirect_to '/blog/dashboard'
       else
-        render 'new', layout: 'layouts/hq/application'
+        render 'new'
       end
     end
 
@@ -32,7 +34,6 @@ module Kebapress
 
     def edit
       @post = Kebapress::Post.find(params[:id])
-      render layout: 'layouts/hq/application'
     end
 
     def update

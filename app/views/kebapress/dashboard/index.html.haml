@@ -14,4 +14,8 @@
   %h2= "Categories"
   - @categories.each do |category|
     = link_to category.title, category_path(category)
+    = link_to "(Edit,", edit_category_path(category)
+    = link_to "Delete)", category_path(category), method: :delete
     %br
+  %br
+  = button_to "New Category", new_category_path, method: :get
