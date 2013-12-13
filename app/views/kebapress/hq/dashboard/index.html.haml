@@ -4,16 +4,16 @@
   %h2= "Posts"
   - @posts.each do |post|
     = link_to post.title, post_path(post)
-    = link_to "(Edit,", edit_post_path(post)
+    = link_to "(Edit,", edit_hq_post_path(post)
     = link_to "Delete)", post_path(post), method: :delete
     %br
   %br
-  = button_to "New Post", new_post_path, method: :get
+  = button_to "New Post", new_hq_post_path, method: :get
 
   %h2= "Uncategorized Posts"
   - @posts.uncategorized.each do |unpost|
     = link_to unpost.title, post_path(unpost)
-    = link_to "(Edit,", edit_post_path(unpost)
+    = link_to "(Edit,", edit_hq_post_path(unpost)
     = link_to "Delete)", post_path(unpost), method: :delete
     %br
   %br
@@ -21,9 +21,9 @@
 .categories
   %h2= "Categories"
   - @categories.each do |category|
-    = link_to category.title, category_path(category)
-    = link_to "(Edit,", edit_category_path(category)
-    = link_to "Delete)", category_path(category), method: :delete
+    = link_to category.title, hq_category_path(category)
+    = link_to "(Edit,", edit_hq_category_path(category)
+    = link_to "Delete)", hq_category_path(category), method: :delete
     %br
   %br
-  = button_to "New Category", new_category_path, method: :get
+  = button_to "New Category", new_hq_category_path, method: :get
