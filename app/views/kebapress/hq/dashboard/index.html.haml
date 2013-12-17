@@ -5,7 +5,7 @@
   - @posts.each do |post|
     = link_to post.title, post_path(post)
     = link_to "(Edit,", edit_hq_post_path(post)
-    = link_to "Delete)", post_path(post), method: :delete
+    = link_to "Delete)", hq_post_path(post), method: :delete
     %br
   %br
   = button_to "New Post", new_hq_post_path, method: :get
@@ -14,7 +14,7 @@
   - @posts.uncategorized.each do |unpost|
     = link_to unpost.title, post_path(unpost)
     = link_to "(Edit,", edit_hq_post_path(unpost)
-    = link_to "Delete)", post_path(unpost), method: :delete
+    = link_to "Delete)", hq_post_path(unpost), method: :delete
     %br
   %br
 

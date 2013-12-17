@@ -16,7 +16,7 @@ module Kebapress
       @category = Kebapress::Category.create(category_params)
 
       if @category.save
-        redirect_to "/blog/dashboard"
+        redirect_to "/blog/hq/dashboard"
       else
         render 'new'
       end
@@ -29,14 +29,14 @@ module Kebapress
     def update
       @category = Kebapress::Category.find(params[:id])
       @category.update(category_params)
-      redirect_to "/blog/dashboard"
+      redirect_to "/blog/hq/dashboard"
     end
 
     def destroy
       @category = Kebapress::Category.find(params[:id])
       @category.destroy
 
-      redirect_to "/blog/dashboard"
+      redirect_to "/blog/hq/dashboard"
     end
 
     private

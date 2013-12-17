@@ -3,7 +3,7 @@ Kebapress::Engine.routes.draw do
 
   namespace :hq do
     resources :dashboard, only: [:index]
-    resources :posts, except: [:index, :show]
+    resources :posts
     resources :categories
   end
 

@@ -16,7 +16,7 @@ module Kebapress
       @post.published_at = Time.now if @post.published
 
       if @post.save
-        redirect_to '/blog/dashboard'
+        redirect_to '/blog/hq/dashboard'
       else
         render 'new'
       end
@@ -35,14 +35,14 @@ module Kebapress
 
       @post.update(post_params)
 
-      redirect_to '/blog/dashboard'
+      redirect_to '/blog/hq/dashboard'
     end
 
     def destroy
       @post = Kebapress::Post.find(params[:id])
       @post.destroy
 
-      redirect_to '/blog/dashboard'
+      redirect_to '/blog/hq/dashboard'
     end
 
     private

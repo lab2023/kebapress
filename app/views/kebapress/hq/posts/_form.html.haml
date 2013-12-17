@@ -1,7 +1,7 @@
 =stylesheet_link_tag 'kebapress/medium-editor.css'
 =javascript_include_tag 'kebapress/medium-editor'
 
-= form_for @post do |f|
+= form_for [:hq, @post] do |f|
   = f.label :title
   = f.text_field :title
   = f.hidden_field :body, html: { id: "body" }
