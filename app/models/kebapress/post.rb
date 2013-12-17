@@ -5,6 +5,7 @@ module Kebapress
 
     has_and_belongs_to_many :tags
     has_and_belongs_to_many :categories
+    belongs_to :admin, class_name: 'Admin', foreign_key: 'author_id'
 
     validates :title, presence: true
     validates :body, presence: true
