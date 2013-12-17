@@ -30,7 +30,7 @@ module Kebapress
       @post = Kebapress::Post.find(params[:id])
 
       @post.commentable = false unless params[:commentable]
-      @post.published = false unless params[:published]
+      @post.published = params[:post][:published] ? true : false
       @post.published_at ||= Time.now if @post.published
 
       @post.update(post_params)
