@@ -1,7 +1,7 @@
-require_dependency "kebapress/application_controller"
+require_dependency "kebapress/hq/application_controller"
 
 module Kebapress
-  class Hq::CategoriesController < ApplicationController
+  class Hq::CategoriesController < Hq::ApplicationController
     layout 'layouts/hq/application'
 
     def show

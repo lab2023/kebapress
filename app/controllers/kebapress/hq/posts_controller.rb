@@ -1,4 +1,4 @@
-require_dependency "kebapress/application_controller"
+require_dependency "kebapress/hq/application_controller"
 
 module Kebapress
   class Hq::PostsController < ApplicationController
@@ -14,6 +14,8 @@ module Kebapress
       @post.commentable = false unless @post.commentable
       @post.published = false unless @post.published
       @post.published_at = Time.now if @post.published
+
+      @post.admin = current_admin
 
       if @post.save
         redirect_to '/blog/hq/dashboard'
