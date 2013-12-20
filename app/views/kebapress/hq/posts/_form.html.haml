@@ -4,17 +4,21 @@
 = form_for [:hq, @post] do |f|
   = f.label :title
   = f.text_field :title
-  = f.hidden_field :body, html: { id: "body" }
-  .body.editable{data: {field: {id: "body"}}}
+  = f.hidden_field :body, html: { id: 'body' }
+  .body.editable{data: {field: {id: 'body'}}}
   = f.label :tags
   = f.text_field :tag_list
   .checkbox
   = check_box :post, :published, {}, true, false
-  %label= "Publish Now"
+  %label= 'Publish Now'
   %br
   = check_box :post, :commentable, {}, true, false
-  %label= "Commentable"
+  %label= 'Commentable'
   %br
+  - @categories.each do |category|
+    .categories
+      =check_box_tag 'post[category_ids][]', category.id, @post.categories.include?(category)
+      =category.title
   = f.submit
 
 =javascript_include_tag 'kebapress/posts'

@@ -1,4 +1,4 @@
-require_dependency "kebapress/hq/application_controller"
+require_dependency 'kebapress/hq/application_controller'
 
 module Kebapress
   class Hq::PostsController < ApplicationController
@@ -6,6 +6,7 @@ module Kebapress
 
     def new
       @post = Kebapress::Post.new
+      @categories = Kebapress::Category.all
     end
 
     def create
@@ -26,9 +27,11 @@ module Kebapress
 
     def edit
       @post = Kebapress::Post.find(params[:id])
+      @categories = Kebapress::Category.all
     end
 
     def update
+      params[:post][:category_ids] ||= []
       @post = Kebapress::Post.find(params[:id])
 
       @post.commentable = false unless params[:commentable]
@@ -49,7 +52,7 @@ module Kebapress
 
     private
       def post_params
-        params.require(:post).permit(:title, :body, :published, :commentable, :tag_list)
+        params.require(:post).permit(:title, :body, :published, :commentable, :tag_list, { category_ids: [] })
       end
   end
 end
