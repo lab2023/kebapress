@@ -1,9 +1,7 @@
 require_dependency 'kebapress/hq/application_controller'
 
 module Kebapress
-  class Hq::PostsController < ApplicationController
-    layout 'layouts/hq/application'
-
+  class Hq::PostsController < Hq::ApplicationController
     def new
       @post = Kebapress::Post.new
       @categories = Kebapress::Category.all

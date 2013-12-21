@@ -14,7 +14,7 @@ module Kebapress
 
     def tag_list=(tags)
       self.tags.clear
-      tags.split(",").each do |tag|
+      tags.split(',').each do |tag|
         self.tags << Kebapress::Tag.find_or_create_by_title(tag.strip)
       end
     end
