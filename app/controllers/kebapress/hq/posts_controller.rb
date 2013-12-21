@@ -19,6 +19,7 @@ module Kebapress
       if @post.save
         redirect_to '/blog/hq/dashboard'
       else
+        @categories = Kebapress::Category.all
         render 'new'
       end
     end

@@ -34,6 +34,7 @@
     .categories.checkbox
       =check_box_tag 'post[category_ids][]', category.id, @post.categories.include?(category)
       =category.title
+  %br
   = f.submit
 
 =javascript_include_tag 'kebapress/posts'
