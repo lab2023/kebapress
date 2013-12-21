@@ -3,27 +3,35 @@
 
 = form_for [:hq, @post] do |f|
 
-  = f.label :title
-  = f.text_field :title, value: 'Test'
+  .post-title
+    = f.label :title
+    %br
+    = f.text_field :title
 
-  = f.hidden_field :body, html: { id: 'body' }
-  .body.editable{data: {field: {id: 'body'}}}
-    = f.label 'Body'
+  .post-body
+    %br
+    = f.label :body
+    = f.hidden_field :body, html: { id: 'body' }
+    .body.editable{data: {field: {id: 'body'}, placeholder: ' '}}
+  %br
+  .post-tags
+    = f.label :tags
+    %br
+    = f.text_field :tag_list
 
-  = f.label :tags
-  = f.text_field :tag_list
-
+  %br
   .checkbox
-  = check_box :post, :published, {}, true, false
-  %label= 'Publish Now'
+    = check_box :post, :published, {}, true, false
+    %label= 'Publish Now'
+
+    %br
+    = check_box :post, :commentable, {}, true, false
+    %label= 'Commentable'
 
   %br
-  = check_box :post, :commentable, {}, true, false
-  %label= 'Commentable'
-
-  %br
+  = f.label 'Categories'
   - @categories.each do |category|
-    .categories
+    .categories.checkbox
       =check_box_tag 'post[category_ids][]', category.id, @post.categories.include?(category)
       =category.title
   = f.submit
