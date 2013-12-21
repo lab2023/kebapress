@@ -2,18 +2,25 @@
 =javascript_include_tag 'kebapress/medium-editor'
 
 = form_for [:hq, @post] do |f|
+
   = f.label :title
-  = f.text_field :title
+  = f.text_field :title, value: 'Test'
+
   = f.hidden_field :body, html: { id: 'body' }
   .body.editable{data: {field: {id: 'body'}}}
+    = f.label 'Body'
+
   = f.label :tags
   = f.text_field :tag_list
+
   .checkbox
   = check_box :post, :published, {}, true, false
   %label= 'Publish Now'
+
   %br
   = check_box :post, :commentable, {}, true, false
   %label= 'Commentable'
+
   %br
   - @categories.each do |category|
     .categories

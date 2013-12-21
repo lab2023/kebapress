@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
   s.authors     = %w['lab2023']
   s.email       = %w['info@lab2023.com']
   s.homepage    = 'https://github.com/kebab-project/kebapress'
-  s.summary     = 'Kebapress is a blog engine for Cybele initialized Rails applications.''
+  s.summary     = 'Kebapress is a blog engine for Cybele initialized Rails applications.'
   s.description = 'TODO: Description of Kebapress.'
 
-  s.files = Dir["app,config,db,lib}/**/*", 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_dependency 'rails', '~> 4.0.0'
   s.add_dependency 'haml', '~> 4.0.2'
