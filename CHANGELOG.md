@@ -1,7 +1,37 @@
 
 #### [Current]
+ * [a2a6276](../../commit/a2a6276) - __(Ahmet Sezgin Duran)__ Fix post creation error
+ * [24cad4b](../../commit/24cad4b) - __(Ahmet Sezgin Duran)__ Add empty placeholder for editor
+ * [6046f26](../../commit/6046f26) - __(Ahmet Sezgin Duran)__ Fix indents and lines
+ * [9aaff60](../../commit/9aaff60) - __(Ahmet Sezgin Duran)__ Fix double quotes
+ * [8d06616](../../commit/8d06616) - __(Ahmet Sezgin Duran)__ Link post and category in view layer
+ * [38ac89f](../../commit/38ac89f) - __(Ahmet Sezgin Duran)__ Link post and admin and authenticate spesific controllers
+ * [1a79a30](../../commit/1a79a30) - __(Ahmet Sezgin Duran)__ Create relation between host and engine models
+ * [69b9600](../../commit/69b9600) - __(Ahmet Sezgin Duran)__ Fix published boolean attribute error
+ * [a2c4027](../../commit/a2c4027) - __(Ahmet Sezgin Duran)__ Fix form-namespace errors
+ * [9494436](../../commit/9494436) - __(Ahmet Sezgin Duran)__ Separate controllers and views for HQ
+ * [a2a11e0](../../commit/a2a11e0) - __(Ahmet Sezgin Duran)__ [#13](../../issues/13) Get uncategorized posts with scope
+ * [d825e15](../../commit/d825e15) - __(Ahmet Sezgin Duran)__ [#15](../../issues/15) Get tags from string and parse for post
+ * [72aa4d2](../../commit/72aa4d2) - __(Ahmet Sezgin Duran)__ [#14](../../issues/14) Complete the category management
+ * [9926b11](../../commit/9926b11) - __(Ahmet Sezgin Duran)__ [#13](../../issues/13) Manage commentable status on post form
+ * [0bc534d](../../commit/0bc534d) - __(Ahmet Sezgin Duran)__ [#13](../../issues/13) Finish up publish-unpublish system for posts
+ * [39cabdd](../../commit/39cabdd) - __(Ahmet Sezgin Duran)__ [#13](../../issues/13) Create destroy link and method
+ * [6cd4e9d](../../commit/6cd4e9d) - __(Ahmet Sezgin Duran)__ [#13](../../issues/13) Complete the edit-update system for posts
+ * [c853589](../../commit/c853589) - __(Ahmet Sezgin Duran)__ [#13](../../issues/13) Create edit page with form partial
+ * [844689f](../../commit/844689f) - __(Ahmet Sezgin Duran)__ [#13](../../issues/13) Create posts with publish date from HQ panel
+ * [f55f16c](../../commit/f55f16c) - __(Ahmet Sezgin Duran)__ [#13](../../issues/13) Fix JS error and change Gemfile
+ * [6bd4e75](../../commit/6bd4e75) - __(Ahmet Sezgin Duran)__ [#13](../../issues/13) Get post's new page to HQ
+ * [8e24cab](../../commit/8e24cab) - __(Ahmet Sezgin Duran)__ [#12](../../issues/12) Create categories controller and basic dashboard index
+ * [55251d2](../../commit/55251d2) - __(Ahmet Sezgin Duran)__ [#12](../../issues/12) Create Dashboard controller for blog
+ * [6d98fdd](../../commit/6d98fdd) - __(Ahmet Sezgin Duran)__ [#17](../../issues/17) Fix tab spaces
+ * [c5d12c3](../../commit/c5d12c3) - __(Ahmet Sezgin Duran)__ [#8](../../issues/8) Use javascript from vendor folder
 
-#### 
+#### 0.1.1
+ * [5eccd1d](../../commit/5eccd1d) - __(Ahmet Sezgin Duran)__ Fix gemspec syntax error
+
+#### 0.1.0
+ * [74fd507](../../commit/74fd507) - __(Ahmet Sezgin Duran)__ [#9](../../issues/9) Update Readme and gemspec
+ * [90eece4](../../commit/90eece4) - __(Ahmet Sezgin Duran)__ [#9](../../issues/9) Bump version and create Changelog
  * [8c775b8](../../commit/8c775b8) - __(Ahmet Sezgin Duran)__ [#8](../../issues/8) Get inputs with Medium editor
  * [bc50396](../../commit/bc50396) - __(Ahmet Sezgin Duran)__ [#8](../../issues/8) Get Medium editor js file from internet instead of local
  * [d775393](../../commit/d775393) - __(Ahmet Sezgin Duran)__ [#8](../../issues/8) Remove Redcarpet and add Medium editor
