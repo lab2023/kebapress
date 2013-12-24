@@ -1,0 +1,40 @@
+=stylesheet_link_tag 'kebapress/medium-editor.css'
+=javascript_include_tag 'kebapress/medium-editor'
+
+= form_for [:hq, @post] do |f|
+
+  .post-title
+    = f.label :title
+    %br
+    = f.text_field :title
+
+  .post-body
+    %br
+    = f.label :body
+    = f.hidden_field :body, html: { id: 'body' }
+    .body.editable{data: {field: {id: 'body'}, placeholder: ' '}}
+  %br
+  .post-tags
+    = f.label :tags
+    %br
+    = f.text_field :tag_list
+
+  %br
+  .checkbox
+    = check_box :post, :published, {}, true, false
+    %label= 'Publish Now'
+
+    %br
+    = check_box :post, :commentable, {}, true, false
+    %label= 'Commentable'
+
+  %br
+  = f.label 'Categories'
+  - @categories.each do |category|
+    .categories.checkbox
+      =check_box_tag 'post[category_ids][]', category.id, @post.categories.include?(category)
+      =category.title
+  %br
+  = f.submit
+
+=javascript_include_tag 'kebapress/posts'
