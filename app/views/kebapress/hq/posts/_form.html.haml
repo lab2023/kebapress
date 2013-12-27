@@ -1,7 +1,7 @@
-=stylesheet_link_tag 'kebapress/medium-editor.css'
-=javascript_include_tag 'kebapress/medium-editor'
+=stylesheet_link_tag 'kebapress/application'
+=javascript_include_tag 'kebapress/application'
 
-= form_for [:hq, @post] do |f|
+= form_for [:hq, @post], html: { class: 'form-container'} do |f|
 
   .post-title
     = f.label :title
