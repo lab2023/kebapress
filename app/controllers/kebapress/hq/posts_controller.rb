@@ -49,6 +49,13 @@ module Kebapress
       redirect_to '/blog/hq/dashboard'
     end
 
+    def imageUpload
+      tmp = params[:file].tempfile
+      file = File.join('public', params[:file].original_filename)
+      FileUtils.cp tmp.path, file
+      render text: "#{request.scheme}://#{request.host_with_port}/#{params[:file].original_filename}"
+    end
+
     private
       def post_params
         params.require(:post).permit(:title, :body, :published, :commentable, :tag_list, { category_ids: [] })

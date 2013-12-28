@@ -3,6 +3,14 @@ module Kebapress
     scope :published, -> { where(published: true) }
     scope :uncategorized, -> { includes(:categories).where(kebapress_categories: { id: nil })}
 
+    #has_attached_file :image, styles: { small: '150x150>' },
+    #                  url: '/assets/kebapress/posts/:id/:style/:basename.:extension',
+    #                  path: ':rails_root/public/assets/kebapress/images/posts/:id/:style/:basename.:extension'
+
+    #validates_attachment_presence :image
+    #validates_attachment_size :image, less_than: 5.megabytes
+    #validates_attachment_content_type :image, content_type: ['image/jpeg', 'image/png']
+
     has_and_belongs_to_many :tags
     has_and_belongs_to_many :categories
     belongs_to :admin, class_name: 'Admin', foreign_key: 'author_id'

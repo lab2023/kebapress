@@ -1,5 +1,8 @@
-=stylesheet_link_tag 'kebapress/application'
-=javascript_include_tag 'kebapress/application'
+- content_for :head do
+  =stylesheet_link_tag 'kebapress/application'
+
+- content_for :foot do
+  = javascript_include_tag 'kebapress/posts'
 
 = form_for [:hq, @post], html: { class: 'form-container'} do |f|
 
@@ -12,7 +15,7 @@
     %br
     = f.label :body
     = f.hidden_field :body, html: { id: 'body' }
-    .body.editable{data: {field: {id: 'body'}, placeholder: ' '}}
+    .editable{data: {field: {id: 'body'}, placeholder: ' '}}
   %br
   .post-tags
     = f.label :tags
@@ -36,5 +39,3 @@
       =category.title
   %br
   = f.submit
-
-=javascript_include_tag 'kebapress/posts'
