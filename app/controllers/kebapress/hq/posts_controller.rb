@@ -10,15 +10,21 @@ module Kebapress
     def create
       @post = Kebapress::Post.new(post_params)
 
+      # params[:boolean_variable] returns 'true' or 'nil'
+      # So we have to assign false value by using unless true
       @post.commentable = false unless @post.commentable
       @post.published = false unless @post.published
       @post.published_at = Time.now if @post.published
 
+      # Relating post with Cybele app's current admin
       @post.admin = current_admin
 
       if @post.save
         redirect_to '/blog/hq/dashboard'
       else
+        # On an error, a new page will be rendered
+        # but it won't be rendered by new method.
+        # So we need to get all Categories again.
         @categories = Kebapress::Category.all
         render 'new'
       end
@@ -47,6 +53,13 @@ module Kebapress
       @post.destroy
 
       redirect_to '/blog/hq/dashboard'
+    end
+
+    def image_upload
+      @photo = Photo.create(image: params[:file])
+      # Rendering image's url as text for
+      # Medium Editor Insert Plugin
+      render text: @photo.image.url
     end
 
     private

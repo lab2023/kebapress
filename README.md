@@ -10,9 +10,39 @@ Before mounting Kebapress to your application, you will need:
 * Rails ~> 4.0
 * Cybele ~> 1.0.0
 
-## Usage
+## Installing Kebapress to Cybele Rails applications
 
-TODO: Documentation here.
+Add the engine to your Gemfile:
+
+```
+gem kebapress
+```
+
+Bundle install:
+
+```
+bundle install
+```
+
+Copy migrations
+
+```
+rake kebapress:install:migrations
+```
+
+Run migrations:
+
+```
+rake db:migrate
+```
+
+Mount the engine in config/routes.rb file:
+
+```
+mount Kebapress::Engine => '/mount_point' # Example: '/blog'
+```
+
+Add blog icon-link to Cybele Rails application's **app/views/layouts/hq/partials/_dock.haml** file. For an example, checkout **example.haml** file.
 
 ## Bugs and Feedback
 

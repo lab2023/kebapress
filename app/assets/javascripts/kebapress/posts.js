@@ -1,14 +1,24 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-//= require jquery
-//= require jquery_ujs
+//= require kebapress/medium-editor
+//= require kebapress/medium-editor-insert-plugin.all.min
 
 $(document).ready(function() {
-  $('.body.editable').html($('#post_body').attr("value"));
+  $('.editable').html($('#post_body').attr("value"));
 });
 
-var editor = new MediumEditor('.editable');
+var editor = new MediumEditor('.editable', {
+    excludedActions: ['u', 'h3', 'blockquote'],
+});
 
-$('.editable').bind('input propertychange', function() {
-  $("#post_" + $(this).attr("data-field-id")).val($(this).html());
+$(function(){
+  $('.editable').mediumInsert({
+    editor: editor,
+    images: true,
+    imagesUploadScript: 'imageUpload'
+  });
+});
+
+$('.editable').bind('DOMSubtreeModified', function() {
+    $("#post_" + $(this).attr("data-field-id")).val($(this).html());
 });

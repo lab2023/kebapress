@@ -1,5 +1,13 @@
 
 #### [Current]
+ * [59accc9](../../commit/59accc9) - __(Ahmet Sezgin Duran)__ Update README.md for tutorial
+ * [a8c617b](../../commit/a8c617b) - __(Ahmet Sezgin Duran)__ Add comment lines and clean up
+ * [0e542e2](../../commit/0e542e2) - __(Ahmet Sezgin Duran)__ [#10](../../issues/10) Use Paperclip for image upload
+ * [26f4666](../../commit/26f4666) - __(Ahmet Sezgin Duran)__ [#10](../../issues/10) Create basic image upload system
+ * [1207207](../../commit/1207207) - __(Ahmet Sezgin Duran)__ [#10](../../issues/10) Add Medium Editor insert plugin
+
+#### 0.2.0
+ * [02ecdc3](../../commit/02ecdc3) - __(Ahmet Sezgin Duran)__ Bump version 0.2.0
  * [a2a6276](../../commit/a2a6276) - __(Ahmet Sezgin Duran)__ Fix post creation error
  * [24cad4b](../../commit/24cad4b) - __(Ahmet Sezgin Duran)__ Add empty placeholder for editor
  * [6046f26](../../commit/6046f26) - __(Ahmet Sezgin Duran)__ Fix indents and lines
