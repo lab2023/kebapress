@@ -1,5 +1,6 @@
 module Kebapress
   class Post < ActiveRecord::Base
+    # Using scopes for getting published or uncategorized posts at once
     scope :published, -> { where(published: true) }
     scope :uncategorized, -> { includes(:categories).where(kebapress_categories: { id: nil })}
 
