@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     kebapress (0.2.0)
-      ftools
       haml (~> 4.0.2)
       haml-rails
       paperclip (~> 3.5.1)
@@ -43,7 +42,6 @@ GEM
     cocaine (0.5.3)
       climate_control (>= 0.0.3, < 1.0)
     erubis (2.7.0)
-    ftools (0.0.0)
     haml (4.0.4)
       tilt
     haml-rails (0.5.3)

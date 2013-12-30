@@ -5,7 +5,7 @@ Kebapress::Engine.routes.draw do
     resources :dashboard, only: [:index]
     resources :posts
     resources :categories
-    post '/posts/imageUpload', to: 'posts#imageUpload'
+    post '/posts/imageUpload', to: 'posts#image_upload'
   end
 
   get '/hq', to: 'hq/dashboard#index'
