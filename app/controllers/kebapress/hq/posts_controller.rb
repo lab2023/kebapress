@@ -50,10 +50,8 @@ module Kebapress
     end
 
     def imageUpload
-      tmp = params[:file].tempfile
-      file = File.join('public', params[:file].original_filename)
-      FileUtils.cp tmp.path, file
-      render text: "#{request.scheme}://#{request.host_with_port}/#{params[:file].original_filename}"
+      @photo = Photo.create(image: params[:file])
+      render text: @photo.image.url
     end
 
     private
