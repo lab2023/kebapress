@@ -12,7 +12,7 @@ Before mounting Kebapress to your application, you will need:
 
 Add the engine to your Gemfile:
 
-```
+```ruby
 gem 'kebapress'
 ```
 
@@ -36,7 +36,7 @@ rake db:migrate
 
 Mount the engine in config/routes.rb file:
 
-```
+```ruby
 mount Kebapress::Engine => '/mount_point' # Example: '/blog'
 ```
 
