@@ -20,6 +20,7 @@
         = f.input :body, input_html: { id: 'post_body' }, as: :hidden
         .editable{data: {field: {id: 'body'}, placeholder: ' '}}
 
+        %br
         = f.input :published, as: :boolean, label: false, inline_label: true
         = f.input :commentable, as: :boolean, label: false, inline_label: true
 
