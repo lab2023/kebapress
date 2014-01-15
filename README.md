@@ -13,7 +13,7 @@ Before mounting Kebapress to your application, you will need:
 Add the engine to your Gemfile:
 
 ```
-gem kebapress
+gem 'kebapress'
 ```
 
 Bundle install:
