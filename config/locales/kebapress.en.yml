@@ -14,3 +14,5 @@ en:
     ru_sure: 'Are you sure?'
     new_category: 'New Category'
     posts: 'Posts'
+    create_category_button: 'Create Category'
+    update_category_button: 'Update Category'

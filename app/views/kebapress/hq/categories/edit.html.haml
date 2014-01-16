@@ -1,2 +1,7 @@
-%h1 Edit Category
-=render 'form', :category => @category
+- content_for :form_title do
+  #{I18n.t('kebapress.edit_category')}
+
+- content_for :button do
+  #{I18n.t('kebapress.update_category_button')}
+
+= render 'form'

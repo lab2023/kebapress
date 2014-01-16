@@ -1,2 +1,7 @@
-%h1= "New Category"
-=render 'form', category: @category
+- content_for :form_title do
+  #{I18n.t('kebapress.new_category')}
+
+- content_for :button do
+  #{I18n.t('kebapress.create_category_button')}
+
+= render 'form'

@@ -1,5 +1,15 @@
-=form_for [:hq, @category] do |f|
-  =f.label :title
-  =f.text_field :title
-  %br
-  =f.submit
+.panel.panel-default
+  .panel-heading
+    %i.icon-edit.icon-large
+    = yield :form_title
+
+  .panel-body
+    =simple_form_for [:hq, @category] do |f|
+      = f.error_notification
+
+      .form-inputs
+        = f.input :title
+
+      .form-actions
+        = f.button :submit, yield(:button), class: 'btn btn-default'
+        = link_to I18n.t('kebapress.cancel_button'), '/blog/hq', class: 'btn'
