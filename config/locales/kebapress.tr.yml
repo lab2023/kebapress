@@ -16,3 +16,4 @@ tr:
     posts: 'Yazılar'
     create_category_button: 'Kategoriyi Oluştur'
     update_category_button: 'Kategoriyi Güncelle'
+    action: 'Eylem'

@@ -16,3 +16,4 @@ en:
     posts: 'Posts'
     create_category_button: 'Create Category'
     update_category_button: 'Update Category'
+    action: 'Action'
