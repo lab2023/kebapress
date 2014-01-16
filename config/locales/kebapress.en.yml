@@ -1,2 +1,12 @@
 en:
   kebapress:
+    new_post: 'New Post'
+    edit_post: 'Edit'
+    categories: 'Categories'
+    title: 'Title'
+    body: 'Body'
+    published: 'Publish Now'
+    commentable: 'Commentable'
+    create_post_button: 'Create Post'
+    update_post_button: 'Update Post'
+    cancel_button: 'Cancel'
