@@ -1,29 +1,64 @@
-%h1= "Blog Dashboard"
+.panel.panel-default.grid
+  .panel-heading
+    %i.icon-table.icon-large
+    Posts
 
-.posts
-  %h2= "Posts"
-  - @posts.each do |post|
-    = link_to post.title, post_path(post)
-    = link_to "(Edit,", edit_hq_post_path(post)
-    = link_to "Delete)", hq_post_path(post), method: :delete
-    %br
-  %br
-  = button_to "New Post", new_hq_post_path, method: :get
+  %table.table
+    %thead
+      %tr
+        %th #
+        %th Title
+        %th Content
+        %th.actions
+          Action
 
-  %h2= "Uncategorized Posts"
-  - @posts.uncategorized.each do |unpost|
-    = link_to unpost.title, post_path(unpost)
-    = link_to "(Edit,", edit_hq_post_path(unpost)
-    = link_to "Delete)", hq_post_path(unpost), method: :delete
-    %br
-  %br
+    %tbody.success
+      - @posts.each do |post|
+        %tr
+          %td
+            = (@posts.index post) + 1
+          %td
+            = post.title
+          %td
+            = truncate post.body, length: 25
+          %td.action
+            %a.btn.btn-success{href: post_path(post), data: {toggle: 'tooltip'}, title: 'Show'}
+              %i.icon-zoom-in
+            %a.btn.btn-info{href: edit_hq_post_path(post)}
+              %i.icon-edit
+            = link_to hq_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
+              %i.icon-trash
 
-.categories
-  %h2= "Categories"
-  - @categories.each do |category|
-    = link_to category.title, hq_category_path(category)
-    = link_to "(Edit,", edit_hq_category_path(category)
-    = link_to "Delete)", hq_category_path(category), method: :delete
-    %br
-  %br
-  = button_to "New Category", new_hq_category_path, method: :get
+= link_to "New Post", new_hq_post_path, method: :get, class: 'btn btn-default'
+
+%br
+%br
+.panel.panel-default.grid
+  .panel-heading
+    %i.icon-table.icon-large
+    Categories
+
+  %table.table
+    %thead
+      %tr
+        %th #
+        %th Title
+        %th.actions
+          Action
+
+    %tbody.success
+      - @categories.each do |category|
+        %tr
+          %td
+            = (@categories.index category) + 1
+          %td
+            = category.title
+          %td.action
+            %a.btn.btn-success{href: hq_category_path(category), data: {toggle: 'tooltip'}, title: 'Show'}
+              %i.icon-zoom-in
+            %a.btn.btn-info{href: edit_hq_category_path(category)}
+              %i.icon-edit
+            = link_to hq_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
+              %i.icon-trash
+
+= link_to "New Category", new_hq_category_path, method: :get, class: 'btn btn-default'
