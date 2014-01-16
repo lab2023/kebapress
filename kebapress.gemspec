@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'haml', '~> 4.0.2'
   s.add_dependency 'haml-rails'
   s.add_dependency 'paperclip', '~> 3.5.1'
+  s.add_dependency 'simple_form', '~> 3.0.1'
 
   s.add_development_dependency 'sqlite3'
 end

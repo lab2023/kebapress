@@ -42,6 +42,12 @@ mount Kebapress::Engine => '/mount_point' # Example: '/blog'
 
 Add blog icon-link to Cybele Rails application's **app/views/layouts/hq/partials/_dock.haml** file. For an example, checkout **example.haml** file.
 
+**NOTE:** If Javascript files don't seem to be loading, please add this line to your host application's **layouts/hq/partials/_footer.haml** (This is a temporary situation)
+
+```
+= yield :foot
+```
+
 ## Bugs and Feedback
 
 If you discover any bugs or want to drop a line, feel free to create an issue on Github

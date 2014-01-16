@@ -1,29 +1,59 @@
-%h1= "Blog Dashboard"
+= link_to I18n.t('kebapress.new_post'), new_hq_post_path, method: :get, class: 'btn btn-default btn-success pull-right'
+%br
+%br
+.panel.panel-default.grid
+  .panel-heading
+    %i.icon-table.icon-large
+    #{I18n.t('kebapress.posts')}
 
-.posts
-  %h2= "Posts"
-  - @posts.each do |post|
-    = link_to post.title, post_path(post)
-    = link_to "(Edit,", edit_hq_post_path(post)
-    = link_to "Delete)", hq_post_path(post), method: :delete
-    %br
-  %br
-  = button_to "New Post", new_hq_post_path, method: :get
+  %table.table
+    %thead
+      %tr
+        %th #
+        %th #{I18n.t('kebapress.title')}
+        %th.actions
+          #{I18n.t('kebapress.action')}
 
-  %h2= "Uncategorized Posts"
-  - @posts.uncategorized.each do |unpost|
-    = link_to unpost.title, post_path(unpost)
-    = link_to "(Edit,", edit_hq_post_path(unpost)
-    = link_to "Delete)", hq_post_path(unpost), method: :delete
-    %br
-  %br
+    %tbody.success
+      - @posts.each do |post|
+        %tr
+          %td
+            = (@posts.index post) + 1
+          %td
+            = post.title
+          %td.action
+            %a.btn.btn-success{href: post_path(post), data: {toggle: 'tooltip'}, title: I18n.t('kebapress.show')}
+              %i.icon-zoom-in
+            %a.btn.btn-info{href: edit_hq_post_path(post)}
+              %i.icon-edit
+            = link_to hq_post_path(post), method: :delete, data: { confirm: I18n.t('kebapress.ru_sure') }, class: 'btn btn-danger' do
+              %i.icon-trash
 
-.categories
-  %h2= "Categories"
-  - @categories.each do |category|
-    = link_to category.title, hq_category_path(category)
-    = link_to "(Edit,", edit_hq_category_path(category)
-    = link_to "Delete)", hq_category_path(category), method: :delete
-    %br
-  %br
-  = button_to "New Category", new_hq_category_path, method: :get
+= link_to I18n.t('kebapress.new_category'), new_hq_category_path, method: :get, class: 'btn btn-default btn-success pull-right'
+%br
+%br
+.panel.panel-default.grid
+  .panel-heading
+    %i.icon-table.icon-large
+    #{I18n.t('kebapress.categories')}
+
+  %table.table
+    %thead
+      %tr
+        %th #
+        %th #{I18n.t('kebapress.title')}
+        %th.actions
+          #{I18n.t('kebapress.action')}
+
+    %tbody.success
+      - @categories.each do |category|
+        %tr
+          %td
+            = (@categories.index category) + 1
+          %td
+            = category.title
+          %td.action
+            %a.btn.btn-info{href: edit_hq_category_path(category)}
+              %i.icon-edit
+            = link_to hq_category_path(category), method: :delete, data: { confirm: I18n.t('kebapress.ru_sure') }, class: 'btn btn-danger' do
+              %i.icon-trash
