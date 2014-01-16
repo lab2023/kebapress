@@ -4,7 +4,7 @@
     = yield :form_title
 
   .panel-body
-    =simple_form_for [:hq, @category] do |f|
+    =simple_form_for @category do |f|
       = f.error_notification
 
       .form-inputs
