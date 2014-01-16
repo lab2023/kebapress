@@ -1,0 +1,26 @@
+tr:
+  simple_form:
+    "yes": 'Evet'
+    "no": 'Hayır'
+    required:
+      text: 'Gerekli'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="gerekli">*</abbr>'
+    error_notification:
+      default_message: "Lütfen aşağıdaki sorunları gözden geçirin:"
+    # Labels and hints examples
+    # labels:
+    #   defaults:
+    #     password: 'Parola'
+    #   user:
+    #     new:
+    #       email: 'Giriş için e-posta.'
+    #     edit:
+    #       email: 'E-posta.'
+    # hints:
+    #   defaults:
+    #     username: 'Giriş için kullanıcı adı.'
+    #     password: 'Lütfen özel karakter kullanmayın.'
+
