@@ -15,8 +15,8 @@
       = f.error_notification
 
       .form-inputs
-        = f.input :title
-        = f.label :body
+        = f.input :title, label: I18n.t('kebapress.title')
+        = f.label :body, label: I18n.t('kebapress.body')
         = f.input :body, input_html: { id: 'post_body' }, as: :hidden
         .editable{data: {field: {id: 'body'}, placeholder: ' '}}
 
