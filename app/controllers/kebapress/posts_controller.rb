@@ -1,7 +1,7 @@
-require_dependency 'kebapress/hq/application_controller'
+require_dependency 'kebapress/application_controller'
 
 module Kebapress
-  class Hq::PostsController < Hq::ApplicationController
+  class PostsController < ApplicationController
     def new
       @post = Kebapress::Post.new
       @categories = Kebapress::Category.all
@@ -20,7 +20,7 @@ module Kebapress
       @post.admin = current_admin
 
       if @post.save
-        redirect_to '/blog/hq/dashboard'
+        redirect_to '/hq/blog/dashboard'
       else
         # On an error, a new page will be rendered
         # but it won't be rendered by new method.
@@ -45,14 +45,14 @@ module Kebapress
 
       @post.update(post_params)
 
-      redirect_to '/blog/hq/dashboard'
+      redirect_to '/hq/blog/dashboard'
     end
 
     def destroy
       @post = Kebapress::Post.find(params[:id])
       @post.destroy
 
-      redirect_to '/blog/hq/dashboard'
+      redirect_to '/hq/blog/dashboard'
     end
 
     def image_upload
