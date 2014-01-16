@@ -7,6 +7,16 @@ module Kebapress
       @categories = Kebapress::Category.all
     end
 
+    def index
+      @posts = Kebapress::Post.published.order('published_at DESC')
+      render layout: 'layouts/application'
+    end
+
+    def show
+      @post = Kebapress::Post.find(params[:id])
+      render layout: 'layouts/application'
+    end
+
     def create
       @post = Kebapress::Post.new(post_params)
 
