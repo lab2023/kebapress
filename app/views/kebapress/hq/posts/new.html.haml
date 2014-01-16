@@ -1,2 +1,4 @@
-%h1 New Post
-= render 'form', :post => @post
+- content_for :form_title do
+  #{I18n.t('kebapress.new_post')}
+
+= render 'form'

@@ -1,2 +1,4 @@
-%h1 Edit
-= render 'form', :post => @post
+- content_for :form_title do
+  #{I18n.t('kebapress.edit_post')}
+
+= render 'form'
