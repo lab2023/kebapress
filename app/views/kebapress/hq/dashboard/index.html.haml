@@ -1,7 +1,7 @@
 .panel.panel-default.grid
   .panel-heading
     %i.icon-table.icon-large
-    Posts
+    #{I18n.t('kebapress.posts')}
 
   %table.table
     %thead
@@ -22,21 +22,21 @@
           %td
             = truncate post.body, length: 25
           %td.action
-            %a.btn.btn-success{href: post_path(post), data: {toggle: 'tooltip'}, title: 'Show'}
+            %a.btn.btn-success{href: post_path(post), data: {toggle: 'tooltip'}, title: I18n.t('kebapress.show')}
               %i.icon-zoom-in
             %a.btn.btn-info{href: edit_hq_post_path(post)}
               %i.icon-edit
-            = link_to hq_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
+            = link_to hq_post_path(post), method: :delete, data: { confirm: I18n.t('kebapress.ru_sure') }, class: 'btn btn-danger' do
               %i.icon-trash
 
-= link_to "New Post", new_hq_post_path, method: :get, class: 'btn btn-default'
+= link_to I18n.t('kebapress.new_post'), new_hq_post_path, method: :get, class: 'btn btn-default'
 
 %br
 %br
 .panel.panel-default.grid
   .panel-heading
     %i.icon-table.icon-large
-    Categories
+    #{I18n.t('kebapress.categories')}
 
   %table.table
     %thead
@@ -54,11 +54,11 @@
           %td
             = category.title
           %td.action
-            %a.btn.btn-success{href: hq_category_path(category), data: {toggle: 'tooltip'}, title: 'Show'}
+            %a.btn.btn-success{href: hq_category_path(category), data: {toggle: 'tooltip'}, title: I18n.t('kebapress.show')}
               %i.icon-zoom-in
             %a.btn.btn-info{href: edit_hq_category_path(category)}
               %i.icon-edit
-            = link_to hq_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
+            = link_to hq_category_path(category), method: :delete, data: { confirm: I18n.t('kebapress.ru_sure') }, class: 'btn btn-danger' do
               %i.icon-trash
 
-= link_to "New Category", new_hq_category_path, method: :get, class: 'btn btn-default'
+= link_to I18n.t('kebapress.new_category'), new_hq_category_path, method: :get, class: 'btn btn-default'

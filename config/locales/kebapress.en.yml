@@ -10,3 +10,7 @@ en:
     create_post_button: 'Create Post'
     update_post_button: 'Update Post'
     cancel_button: 'Cancel'
+    show: 'Show'
+    ru_sure: 'Are you sure?'
+    new_category: 'New Category'
+    posts: 'Posts'
