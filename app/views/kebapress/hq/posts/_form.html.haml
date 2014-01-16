@@ -21,15 +21,15 @@
         .editable{data: {field: {id: 'body'}, placeholder: ' '}}
 
         %br
-        = f.input :published, as: :boolean, label: false, inline_label: true
-        = f.input :commentable, as: :boolean, label: false, inline_label: true
+        = f.input :published, as: :boolean, label: false, inline_label: I18n.t('kebapress.published')
+        = f.input :commentable, as: :boolean, label: false, inline_label: I18n.t('kebapress.commentable')
 
-        = f.label "Categories"
+        = f.label I18n.t('kebapress.categories')
         - @categories.each do |category|
           .categories.checkbox
             =check_box_tag 'post[category_ids][]', category.id, @post.categories.include?(category)
             =category.title
 
       .form-actions
-        = f.button :submit, class: 'btn btn-default'
-        = link_to 'Cancel', '/blog/hq', class: 'btn'
+        = f.button :submit, yield(:button), class: 'btn btn-default'
+        = link_to I18n.t('kebapress.cancel_button'), '/blog/hq', class: 'btn'
