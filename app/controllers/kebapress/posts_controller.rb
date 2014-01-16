@@ -2,6 +2,7 @@ require_dependency 'kebapress/application_controller'
 
 module Kebapress
   class PostsController < ApplicationController
+    skip_before_filter :authenticate_admin!, only: [:show, :index]
     def new
       @post = Kebapress::Post.new
       @categories = Kebapress::Category.all
@@ -9,12 +10,12 @@ module Kebapress
 
     def index
       @posts = Kebapress::Post.published.order('published_at DESC')
-      render layout: 'layouts/application'
+      render layout: 'layouts/application', template: 'blog/index'
     end
 
     def show
       @post = Kebapress::Post.find(params[:id])
-      render layout: 'layouts/application'
+      render layout: 'layouts/application', template: 'blog/show'
     end
 
     def create
