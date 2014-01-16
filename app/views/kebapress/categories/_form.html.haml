@@ -4,7 +4,7 @@
     = yield :form_title
 
   .panel-body
-    =simple_form_for [:hq, @category] do |f|
+    =simple_form_for @category do |f|
       = f.error_notification
 
       .form-inputs
@@ -12,4 +12,4 @@
 
       .form-actions
         = f.button :submit, yield(:button), class: 'btn btn-default'
-        = link_to I18n.t('kebapress.cancel_button'), '/blog/hq', class: 'btn'
+        = link_to I18n.t('kebapress.cancel_button'), '/hq/blog', class: 'btn'

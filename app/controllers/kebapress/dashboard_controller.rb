@@ -1,7 +1,7 @@
-require_dependency 'kebapress/hq/application_controller'
+require_dependency 'kebapress/application_controller'
 
 module Kebapress
-  class Hq::DashboardController < Hq::ApplicationController
+  class DashboardController < ApplicationController
     def index
       @posts = Kebapress::Post.order('created_at DESC')
       @categories = Kebapress::Category.order('created_at DESC')

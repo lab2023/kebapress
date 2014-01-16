@@ -1,4 +1,4 @@
-= link_to I18n.t('kebapress.new_post'), new_hq_post_path, method: :get, class: 'btn btn-default btn-success pull-right'
+= link_to I18n.t('kebapress.new_post'), new_post_path, method: :get, class: 'btn btn-default btn-success pull-right'
 %br
 %br
 .panel.panel-default.grid
@@ -24,12 +24,12 @@
           %td.action
             %a.btn.btn-success{href: post_path(post), data: {toggle: 'tooltip'}, title: I18n.t('kebapress.show')}
               %i.icon-zoom-in
-            %a.btn.btn-info{href: edit_hq_post_path(post)}
+            %a.btn.btn-info{href: edit_post_path(post)}
               %i.icon-edit
-            = link_to hq_post_path(post), method: :delete, data: { confirm: I18n.t('kebapress.ru_sure') }, class: 'btn btn-danger' do
+            = link_to post_path(post), method: :delete, data: { confirm: I18n.t('kebapress.ru_sure') }, class: 'btn btn-danger' do
               %i.icon-trash
 
-= link_to I18n.t('kebapress.new_category'), new_hq_category_path, method: :get, class: 'btn btn-default btn-success pull-right'
+= link_to I18n.t('kebapress.new_category'), new_category_path, method: :get, class: 'btn btn-default btn-success pull-right'
 %br
 %br
 .panel.panel-default.grid
@@ -53,7 +53,7 @@
           %td
             = category.title
           %td.action
-            %a.btn.btn-info{href: edit_hq_category_path(category)}
+            %a.btn.btn-info{href: edit_category_path(category)}
               %i.icon-edit
-            = link_to hq_category_path(category), method: :delete, data: { confirm: I18n.t('kebapress.ru_sure') }, class: 'btn btn-danger' do
+            = link_to category_path(category), method: :delete, data: { confirm: I18n.t('kebapress.ru_sure') }, class: 'btn btn-danger' do
               %i.icon-trash

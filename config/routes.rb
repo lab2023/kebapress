@@ -1,12 +1,9 @@
 Kebapress::Engine.routes.draw do
-  resources :posts, only: [:index, :show]
 
-  namespace :hq do
-    resources :dashboard, only: [:index]
-    resources :posts
-    resources :categories
-    post '/posts/imageUpload', to: 'posts#image_upload'
-  end
+  resources :dashboard, only: [:index]
+  resources :posts
+  resources :categories
+  post '/posts/imageUpload', to: 'posts#image_upload'
 
-  get '/hq', to: 'hq/dashboard#index'
+  get '/', to: 'dashboard#index'
 end
