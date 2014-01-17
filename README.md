@@ -34,12 +34,15 @@ Run migrations:
 rake db:migrate
 ```
 
-Mount the engine under HQ namespace in config/routes.rb file:
+Mount the engine under HQ namespace and add extra routes in config/routes.rb file:
 
 ```ruby
 namespace :hq do
   mount Kebapress::Engine => '/mount_point' # Example: '/blog'
 end
+
+get '/blog/:id', to: 'kebapress/posts#show', as: 'pages'
+get '/blog', to: 'kebapress/posts#index'
 ```
 
 Add blog icon-link to Cybele Rails application's **app/views/layouts/hq/partials/_dock.haml** file. For an example, checkout **example.haml** file.
