@@ -22,10 +22,10 @@ Bundle install:
 bundle install
 ```
 
-Copy migrations
+Make the installation:
 
 ```
-rake kebapress:install:migrations
+rails g kebapress:install
 ```
 
 Run migrations:
