@@ -11,13 +11,13 @@ var editor = new MediumEditor('.editable', {
     excludedActions: ['u', 'h3', 'blockquote'],
 });
 
-$(function(){
-  $('.editable').mediumInsert({
-    editor: editor,
-    images: true,
-    imagesUploadScript: 'imageUpload'
-  });
-});
+// $(function(){
+//   $('.editable').mediumInsert({
+//     editor: editor,
+//     images: true,
+//     imagesUploadScript: 'imageUpload'
+//   });
+// });
 
 $('.editable').bind('DOMSubtreeModified', function() {
     $("#post_" + $(this).attr("data-field-id")).val($(this).html());
