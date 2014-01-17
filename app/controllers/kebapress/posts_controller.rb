@@ -10,12 +10,12 @@ module Kebapress
 
     def index
       @posts = Kebapress::Post.published.order('published_at DESC')
-      render layout: 'layouts/application', template: 'blog/index'
+      render layout: 'layouts/application', template: 'kebapress/blog/index'
     end
 
     def show
       @post = Kebapress::Post.find(params[:id])
-      render layout: 'layouts/application', template: 'blog/show'
+      render layout: 'layouts/application', template: 'kebapress/blog/show'
     end
 
     def create
