@@ -22,7 +22,7 @@
           %td
             = post.title
           %td.action
-            %a.btn.btn-success{href: post_path(post), data: {toggle: 'tooltip'}, title: I18n.t('kebapress.show')}
+            %a.btn.btn-success{href: main_app.pages_path(post), data: {toggle: 'tooltip'}, title: I18n.t('kebapress.show')}
               %i.icon-zoom-in
             %a.btn.btn-info{href: edit_post_path(post)}
               %i.icon-edit
