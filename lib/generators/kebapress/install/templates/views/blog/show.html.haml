@@ -1,0 +1,18 @@
+.post.container
+  .title.page-header
+    %h1= @post.title
+  .info
+    - if @post.published
+      %p= "Posted at " + @post.published_at.strftime("%m/%d/%Y")
+  .body
+    %p.lead= @post.body.html_safe
+  .bottom
+    .categories
+      %h5= "Categories:"
+      - @post.categories.each do |category|
+        %span.label.label-info= link_to category.title + ", ", "#"
+
+    .tags
+      %h5= "Tags:"
+      - @post.tags.each do |tag|
+        %span.label.label-info= link_to tag.title + ", ", "#"
