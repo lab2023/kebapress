@@ -11,11 +11,11 @@ Gem::Specification.new do |s|
   s.email       = %w['info@lab2023.com']
   s.homepage    = 'https://github.com/kebab-project/kebapress'
   s.summary     = 'Kebapress is a blog engine for Cybele initialized Rails applications.'
-  s.description = 'TODO: Description of Kebapress.'
+  s.description = 'Kebapress is a blog engine for Cybele initialized Rails applications.'
 
   s.files = Dir['app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
-  s.add_dependency 'rails', '~> 4.0.0'
+  s.add_dependency 'rails', '~> 4.0.3'
   s.add_dependency 'haml', '~> 4.0.2'
   s.add_dependency 'haml-rails'
   s.add_dependency 'paperclip', '~> 3.5.1'
