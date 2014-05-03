@@ -71,9 +71,9 @@ Once you've made your great commits:
 
 ## Credits
 
-- Kebapress is maintained and funded by [lab2023 - internet technologies](http://lab2023.com/)
+- Kebapress is maintained and funded by [lab2023 - information technologies](http://lab2023.com/)
 - The names and logos for lab2023 are trademarks of lab2023, inc.
 
 ## License
 
-Copyright 2012 lab2023 – internet technologies
+Copyright 2014 lab2023 – information technologies
